@@ -53,7 +53,7 @@
     <?php endif; ?>
 
     <div style="display:flex;align-items:center;gap:12px">
-        <img class="icon" src="metro/php.svg" alt="PHP Ready" width="36" height="36" />
+        <img class="icon" src="metro/Php.svg" alt="PHP Ready" width="36" height="36" /><!--php-->
         <div>
             <h3>PHP Ready</h3>
             <p>PHP is installed and configured. Dynamic apps and frameworks will run here.</p>
