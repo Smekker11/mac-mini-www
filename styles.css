@@ -1,0 +1,219 @@
+/* Consolidated Metro dark stylesheet (includes previous metro.css rules)
+   and the requested background image + gradient for the body. */
+
+:root{
+  --bg:#0f0f10;
+  --panel:#141416;
+  --text:#f5f5f5;
+  --text-secondary:#d8d8d8;
+  --accent-green:#28a745;
+  --muted:#a0a0a1;
+  --line:rgba(255,255,255,0.08);
+  --accent-blue:#0078d7;
+  --accent-teal:#00b3a6;
+  --accent-magenta:#c51162;
+  --accent-amber:#ffb020;
+  --radius:4px;
+  --gap:14px;
+  --tile-pad:18px;
+  --tile-gap:14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  min-height: 100vh;
+  background-image:
+    url('coffee-bean.bmp'),
+    linear-gradient(135deg, rgba(255, 170, 58, 0.950) 0%, rgba(124, 60, 0, 0.70) 50%, rgba(160, 19, 0, 0.7) 100%);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: overlay;
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:block;
+  padding:0;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* layout container */
+.container{
+  width:100%;
+  max-width:1100px;
+  margin:28px auto;
+  padding:18px;
+}
+
+/* Hero uses a glassy panel but with sharp edges for Metro */
+.hero{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:var(--radius);
+  padding:26px 20px;
+  text-align:center;
+  border:1px solid var(--line);
+  backdrop-filter: blur(8px) saturate(120%);
+  -webkit-backdrop-filter: blur(8px) saturate(120%);
+}
+.hero .logo{color:var(--text-secondary); margin-bottom:6px}
+.title{font-size:28px; margin:2px 0 8px; font-weight:700; letter-spacing:0.2px; color:var(--text)}
+.subtitle{margin:0; color:var(--text-secondary); font-size:14px}
+.meta{margin:10px 0 14px; color:var(--text-secondary); font-size:13px}
+.cta{
+  display:inline-block;
+  padding:10px 18px;
+  border-radius:4px;
+  background:var(--accent-blue);
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* Tile grid: explicit Metro-like columns and crisp tiles */
+.tiles{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-content: center;
+  grid-auto-rows: 110px;
+  gap: var(--tile-gap);
+  margin:20px 0 26px;
+}
+.tile{
+  display:flex;
+  align-items:flex-start;
+  gap:12px;
+  padding:var(--tile-pad);
+  border-radius:var(--radius);
+  color:var(--text);
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.008));
+  border:1px solid var(--line);
+  transition:transform .12s ease, box-shadow .12s ease, background-color .12s ease;
+  overflow:hidden;
+  padding-top:18px;
+  align-items:center;
+  justify-content:flex-start;
+  backdrop-filter: blur(6px) saturate(110%);
+  -webkit-backdrop-filter: blur(6px) saturate(110%);
+}
+.tile:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(0,0,0,0.55)}
+.tile .icon{width:36px;height:36px;flex:0 0 36px}
+.tile h3{margin:0 0 6px; font-size:15px; color:var(--text)}
+.tile p{margin:0; color:var(--text-secondary); font-size:13px}
+
+/* allow some tiles to be larger — Metro style */
+.tile--large{grid-column:span 2; grid-row:span 2; min-height:240px}
+.tile--wide{grid-column:span 2}
+.tile--tall{grid-row:span 2; min-height:220px}
+
+/* accent variants (kept but flatter, stronger color blocks like Windows tiles) */
+.tile--blue{background:linear-gradient(180deg, rgba(0,120,215,0.18), rgba(0,120,215,0.14)); border-color: rgba(0,120,215,0.16)}
+.tile--teal{background:linear-gradient(180deg, rgba(0,179,166,0.16), rgba(0,179,166,0.12)); border-color: rgba(0,179,166,0.12)}
+.tile--magenta{background:linear-gradient(180deg, rgba(197,17,98,0.16), rgba(197,17,98,0.12)); border-color: rgba(197,17,98,0.12)}
+.tile--amber{background:linear-gradient(180deg, rgba(255,176,32,0.16), rgba(255,176,32,0.12)); border-color: rgba(255,176,32,0.12)}
+
+/* Minecraft tile: distinct green accent */
+.tile--green{background:linear-gradient(180deg, rgba(40,167,69,0.16), rgba(40,167,69,0.12)); border-color: rgba(40,167,69,0.12)}
+
+
+.feature{display:flex;align-items:center;gap:22px;padding:18px;background:transparent}
+.device svg{width:120px;height:auto;display:block;margin:auto;filter:grayscale(0.08) brightness(1.05)}
+.device img{width:120px;height:auto;display:block;margin:auto;filter:grayscale(0.08) brightness(1.05)}
+.hero .logo img{display:block;margin:0 auto 6px}
+
+/* Page transition helpers */
+html,body{height:100%}
+.page-transition {transition: opacity .22s ease; opacity:1}
+.page-hidden {opacity:0}
+
+/* Make tile links fill the article and remove default link styles */
+.tile-link{display:block;color:inherit;text-decoration:none}
+.tile-link:focus{outline:3px solid rgba(0,120,215,0.14);outline-offset:3px}
+.feature-text h2{margin:0 0 8px;font-size:18px; color:var(--text)}
+.feature-text p{margin:0;color:var(--text-secondary)}
+
+.foot{margin-top:26px;text-align:center;color:var(--text-secondary);font-size:12px}
+
+@media (max-width:480px){
+  .hero{padding:18px}
+  .container{padding:12px; margin:14px auto;}
+  body{padding:10px;}
+}
+@media (max-width:320px){
+  .tiles{ grid-template-columns: 1fr; }
+  .hero{ padding:12px; }
+}
+@media (max-width:768px){
+  .container{ margin-top: 0; }
+  .tiles{ justify-content: flex-start; }
+  .hero{ padding: 18px; }
+}
+@media (max-aspect-ratio: 1/2){
+  .container{ margin-top: 20px; }
+}
+
+/* small utility */
+code{background:rgba(255,255,255,0.03);padding:4px 6px;border-radius:4px;font-size:12px;color:var(--text)}
+
+/* Focus outlines for keyboard users */
+a:focus, .tile:focus{outline:3px solid rgba(0,120,215,0.14);outline-offset:3px}
+
+/* utility: make headings and tiles feel crisp */
+.title, .tile h3{font-family: 'Segoe UI', Roboto, Arial, sans-serif; font-weight:700}
+
+/* Services / scan UI helpers */
+.service-form{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.form-input{flex:1;padding:10px;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--text);min-width:160px}
+.scan-results{margin-top:12px}
+.scan-results{
+  margin-top:18px;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  gap:14px;
+  justify-content:flex-start;
+  align-items:stretch;
+  padding:12px;
+  overflow-x:auto;
+  -webkit-overflow-scrolling:touch;
+  scroll-behavior:smooth;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scan-results::-webkit-scrollbar{height:0;display:none}
+.results-container{width:100%;display:flex;justify-content:center}
+.port-row{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:14px;
+  border-radius:8px;
+  min-width:180px;
+  flex:0 0 200px;
+  background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.008));
+  border:1px solid var(--line);
+  margin-right:10px;
+}
+.status-open{color:var(--accent-teal);font-weight:700;margin-top:8px}
+.status-closed{color:var(--muted);margin-top:8px}
+.cta--outline{background:transparent;color:var(--text);border:1px solid var(--line);padding:8px 12px;text-decoration:none;display:inline-block;border-radius:6px}
+.back-btn{display:inline-block;margin-top:14px}
+/* down menu area for services page back button */
+.down-menu{display:flex;justify-content:center;margin-top:18px}
+/* separator between tiles and down-menu */
+.separator{height:10px;width:100%;margin:14px 0 18px;background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(0,0,0,0.03));backdrop-filter: blur(3px);-webkit-backdrop-filter: blur(3px);border-top:1px solid rgba(255,255,255,0.02);border-bottom:1px solid rgba(0,0,0,0.02);}
+
+/* Back button variant: wider, translucent blue, pops slightly */
+.cta--back{padding:10px 20px;border-radius:8px;background:rgba(0,120,215,0.18);color:#fff;border:1px solid rgba(0,120,215,0.22);text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,0.35);transition:transform .12s ease,box-shadow .12s ease;min-width:160px;font-weight:700;backdrop-filter: blur(4px)}
+.cta--back:hover{transform:translateY(-3px);box-shadow:0 16px 32px rgba(0,0,0,0.45)}
+.cta--back:active{transform:translateY(-1px)}
+/* On wider screens keep the back control anchored at the bottom center */
+@media (min-width:700px){
+  .down-menu{position:static;left:auto;right:auto;bottom:auto;z-index:40;margin-top:18px}
+}
+
+
