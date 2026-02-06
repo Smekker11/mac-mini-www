@@ -7,6 +7,7 @@
   <title>ascii-neofetch</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="ascii-neofetch.css">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body class="page-transition">
   <main style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px;">

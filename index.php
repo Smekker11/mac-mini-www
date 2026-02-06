@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mac Mini Server</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
 </head>
 <body class="page-transition page-hidden">
     <div style="display:flex; align-items:center; justify-content:center; min-height:100vh; padding:10px;">

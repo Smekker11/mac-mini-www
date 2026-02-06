@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP Info — Mac Mini Server</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <style>
         body { background: black !important; color: white !important; }
         .center { text-align: left !important; color: white !important; }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hampter Satumare</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <style>
         body { background: black !important; color: white !important; }
         .center-image { display:flex; align-items:center; justify-content:center; min-height: calc(100vh - 80px); }

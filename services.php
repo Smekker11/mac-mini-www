@@ -64,6 +64,7 @@ if (empty($error)) {
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Services — Mac Mini</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <style>
     .tile--wide:hover { transform: none; box-shadow: none; }
     .tile--wide { flex-direction: column; overflow: visible; min-height: auto; }
