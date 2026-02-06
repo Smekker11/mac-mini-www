@@ -64,7 +64,10 @@ if (empty($error)) {
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Services — Mac Mini</title>
   <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
+<link rel="manifest" href="ico/site.webmanifest">
   <style>
     .tile--wide:hover { transform: none; box-shadow: none; }
     .tile--wide { flex-direction: column; overflow: visible; min-height: auto; }

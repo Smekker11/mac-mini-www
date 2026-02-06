@@ -7,7 +7,10 @@
   <title>ascii-neofetch</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="ascii-neofetch.css">
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="ico/favicon-16x16.png">
+<link rel="manifest" href="ico/site.webmanifest">
 </head>
 <body class="page-transition">
   <main style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px;">
