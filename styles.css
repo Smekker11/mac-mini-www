@@ -17,7 +17,16 @@
   --gap:14px;
   --tile-pad:18px;
   --tile-gap:14px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-family: ConsolasLocal, Consolas, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Load local Consolas if available, fallback to system stack. */
+@font-face{
+  font-family: 'ConsolasLocal';
+  src: local('Consolas'), url('Consolas.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 *{box-sizing:border-box}
@@ -25,20 +34,24 @@
 body{
   margin:0;
   min-height: 100vh;
-  background-image:
-    url('coffee-bean.bmp'),
-    linear-gradient(135deg, rgba(255, 170, 58, 0.950) 0%, rgba(124, 60, 0, 0.70) 50%, rgba(160, 19, 0, 0.7) 100%);
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  background-blend-mode: overlay;
-  color:var(--text);
+    /* Two-layer background on the body: coffee-bean bitmap first, gradient second.
+      Use `overlay` blend so the gradient overlays the tiled pattern. */
+    background-image: url('coffee-bean.bmp'), linear-gradient(135deg, rgba(255, 170, 58, 0.595) 0%, rgba(90, 44, 0, 0.514) 50%, rgba(255, 170, 58, 0.595) 100%);
+    background-repeat: repeat, no-repeat;
+    background-position: top left, center center;
+    background-size: 128px 128px, cover;
+    background-attachment: fixed, fixed;
+    background-blend-mode: overlay,normal;
+    color:goldenrod;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
   display:block;
   padding:0;
-  -webkit-font-smoothing:antialiased;
 }
+
+/* Tiled coffee-bean pattern as a fixed layer on the root element so it
+   reliably sits beneath the `body` gradient and content across pages. */
+/* pattern and gradient are now handled by `body` background layers above */
 
 /* layout container */
 .container{
@@ -98,7 +111,7 @@ body{
   backdrop-filter: blur(6px) saturate(110%);
   -webkit-backdrop-filter: blur(6px) saturate(110%);
 }
-.tile:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(0,0,0,0.55)}
+.tile:hover{transform:translateY(-4px);box-shadow:0 14px 32px rgba(0, 0, 0, 0.37)}
 .tile .icon{width:36px;height:36px;flex:0 0 36px}
 .tile h3{margin:0 0 6px; font-size:15px; color:var(--text)}
 .tile p{margin:0; color:var(--text-secondary); font-size:13px}
@@ -120,7 +133,10 @@ body{
 
 .feature{display:flex;align-items:center;gap:22px;padding:18px;background:transparent}
 .device svg{width:120px;height:auto;display:block;margin:auto;filter:grayscale(0.08) brightness(1.05)}
-.device img{width:120px;height:auto;display:block;margin:auto;filter:grayscale(0.08) brightness(1.05)}
+.device img{width:120px;height:auto;display:block;margin:auto;filter:grayscale(0.08) brightness(1.05);transition:transform .72s cubic-bezier(.2,.9,.2,1);transform-origin:center center;will-change:transform;backface-visibility:hidden}
+
+/* rotate device image 180deg on hover, rotate back on mouse leave */
+.feature .device img:hover{transform:rotate(360deg);transition:transform 1s}
 .hero .logo img{display:block;margin:0 auto 6px}
 
 /* Page transition helpers */

@@ -18,10 +18,9 @@
         <img src="hampter-satumare.png" alt="Hampter Satumare" />
     </div>
 
-     </section>
-         <div class="down-menu">
-        <small><a href="index.php" class="transition-link" style="color: var(--text-secondary);">← Back to Home</a></small>
-      </div>
+     <footer class="foot">
+            <small><a href="index.php" class="transition-link" style="color: var(--text-secondary);">← Back to Home</a></small>
+        </footer>
 
     <script src="page-transitions.js"></script>
     <script>if(typeof initPageTransitions === 'function'){ initPageTransitions(); }</script>

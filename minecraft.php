@@ -1,10 +1,23 @@
 <?php
 // Download handler: generate a temporary zip of all .jar files and serve it
 // Define allowed root early so headers can be sent before HTML output.
-$ALLOWED_ROOT = realpath('/mnt/c/Users/mekky/Documents/Code/mac-mini-www/exmods');
+$config = load_services_config(__DIR__ . '/config.ini');
+function load_services_config(string $file): array {
+  if (!file_exists($file)) {
+    die('Config file not found: ' . htmlspecialchars($file, ENT_QUOTES, 'UTF-8'));
+  }
+
+  $config = parse_ini_file($file, true, INI_SCANNER_TYPED);
+
+  return [
+    'mc_path' => $config['settings']['mc_path'] ?? '/usr/local/mc',
+  ];
+}
+
+$ALLOWED_ROOT = realpath($config['mc_path']);
 
 if ($ALLOWED_ROOT === false) {
-    die('Configured root path does not exist.');
+    die('Configured root path does not exist. Check config.ini settings.');
 }
 
 function generate_and_send_jars_zip($root) {
@@ -76,7 +89,7 @@ if (isset($_GET['download_all']) && $_GET['download_all'] === '1') {
             <div class="container">
                 <header class="hero">
                     <div class="logo">
-                        <img src="Grass-Block-1.svg" alt="Mac Mini Server" width="76" height="64" />
+                        <img src="metro/Grass-Block-1.svg" alt="Mac Mini Server" width="76" height="64" />
                     </div>
                     <h1 class="title">Minecraft Mods</h1>
                     <p class="subtitle">Index of mods running on the minecraft server.</p>

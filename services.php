@@ -49,7 +49,7 @@ function scan_ports(array $ports, string $host, int $timeout): array {
    Bootstrap
 -------------------------------- */
 
-$config = load_services_config(__DIR__ . '/services.ini');
+$config = load_services_config(__DIR__ . '/config.ini');
 $results = [];
 $error = $config['error'] ?? null;
 

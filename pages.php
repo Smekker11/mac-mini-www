@@ -20,7 +20,7 @@
         <section class="tiles" style="grid-template-columns: 1fr; grid-auto-rows: auto;">
             <article class="tile tile--wide" style="overflow: visible;">
                 <div style="font-size:14px;">
-                    <h3 style="margin-bottom:12px;">Available Files</h3>
+                    <h3 style="margin-bottom:12px;">Index of /var/www/html</h3>
                     <ul style="list-style: none; padding: 0; margin: 0;">
                         <?php
                         function generate_tree($path, $level = 0) {

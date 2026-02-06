@@ -1,0 +1,82 @@
+/* Page-specific terminal styles for ascii-neofetch.php */
+
+html,body{height:100%}
+:root{
+  --ansi-0:#000000;
+  --ansi-1:#800000;
+  --ansi-2:#008000;
+  --ansi-3:#808000;
+  --ansi-4:#000080;
+  --ansi-5:#800080;
+  --ansi-6:#008080;
+  --ansi-7:#c0c0c0;
+  --ansi-8:#808080;
+  --ansi-9:#ff5555; /* bright red */
+  --ansi-10:#50fa7b; /* bright green */
+  --ansi-11:#f1fa8c;
+  --ansi-12:#8be9fd;
+  --ansi-13:#ff79c6;
+  --ansi-14:#bd93f9;
+  --ansi-15:#f8f8f2; /* bright white */
+  --text-secondary:#d8d8d8;
+}
+body{background:#000;color:#dcdcdc;font-family:ConsolasLocal, Consolas, Menlo, Monaco, monospace;margin:0;padding:28px}
+
+.terminal-wrap{max-width:1100px;margin:28px auto;padding:20px;border-radius:6px;background:transparent}
+.terminal{background:#000;border:1px solid rgba(255,255,255,0.04);padding:22px;border-radius:8px;color:#e6e6e6}
+.term-inner{display:flex;gap:24px;align-items:flex-start;justify-content:center;flex-wrap:wrap}
+
+.ascii-block{white-space:pre;font-size:14px;line-height:1;color:var(--ansi-9);margin:0;font-family:ConsolasLocal, Consolas, monospace}
+.info-block{font-size:14px;line-height:1.18;color:var(--ansi-15);margin:0;font-family:ConsolasLocal, Consolas, monospace}
+.info-block .muted{color:var(--ansi-9)}
+.info-block .label{color:var(--ansi-9)}
+.info-block .value{color:var(--ansi-15)}
+
+.palette{display:grid;grid-template-columns:repeat(8,22px);grid-auto-rows:14px;margin-top:10px;justify-content:start}
+.palette i{width:100%;height:100%;border-radius:0;border:1px solid rgba(0,0,0,0.25);box-sizing:border-box;display:block}
+
+/* ANSI palette classes */
+.c0{background:var(--ansi-0)}
+.c1{background:var(--ansi-1)}
+.c2{background:var(--ansi-2)}
+.c3{background:var(--ansi-3)}
+.c4{background:var(--ansi-4)}
+.c5{background:var(--ansi-5)}
+.c6{background:var(--ansi-6)}
+.c7{background:var(--ansi-7)}
+.c8{background:var(--ansi-8)}
+.c9{background:var(--ansi-9)}
+.c10{background:var(--ansi-10)}
+.c11{background:var(--ansi-11)}
+.c12{background:var(--ansi-12)}
+.c13{background:var(--ansi-13)}
+.c14{background:var(--ansi-14)}
+.c15{background:var(--ansi-15)}
+
+/* foreground helpers for inline spans inside ascii art */
+.fg-white{color:var(--ansi-15)}
+.fg-red{color:var(--ansi-9)}
+
+.term-footer{margin-top:16px}
+.prompt{color:var(--ansi-10);font-weight:700;font-family:ConsolasLocal, Consolas, monospace}
+/* block cursor that blinks like a terminal */
+.blink{
+  display:inline-block;
+  width:14px;
+  height:18px;
+  vertical-align:middle;
+  color:var(--ansi-10);
+  animation:blink 1s steps(1,start) infinite;
+}
+
+
+@keyframes blink{0%,49%{opacity:1}50%,100%{opacity:0}}
+
+/* layout tweaks for smaller screens */
+@media (max-width:720px){
+  .term-inner{flex-direction:column;align-items:flex-start}
+  .ascii-block{font-size:12px}
+}
+
+
+.foot{margin-top:26px;text-align:center;color:var(--text-secondary);font-size:12px}

@@ -14,10 +14,10 @@
             <div class="logo">
                 <img src="mac-mini.svg" alt="Mac Mini Server" width="76" height="64"/>
             </div>
-            <h1 class="title">Mac Mini — Server</h1>
-            <p class="subtitle">Lightweight, fast, and ready to host your sites.</p>
-            <p class="meta">IP: <strong><?php echo $_SERVER['SERVER_ADDR'] ?? 'localhost'; ?></strong> • PHP: <strong><?php echo phpversion(); ?></strong></p>
-            <p><a class="cta" href="hampter-satumare.php">hampter</a></p>
+            <h1 class="title">merky.home.ro</h1>
+            <p class="subtitle">Mac Mini - Web Server core of merky.home</p>
+            <p class="meta">Local IP: <strong><?php echo $_SERVER['SERVER_ADDR'] ?? 'localhost'; ?></strong> • PHP: <strong><?php echo phpversion(); ?></strong></p>
+            <p><a class="cta" href="hampter-satumare.php">hampter.php</a></p>
         </header>
 
         <section id="tiles" class="tiles" aria-label="Features">
@@ -27,7 +27,7 @@
                         <img class="icon" src="metro/Globe%20Earth.svg" alt="Static Sites" width="36" height="36" />
                         <div>
                             <h3>Pages</h3>
-                            <p>Self-Hosted projects list.</p>
+                            <p>Index of http root.</p>
                         </div>
                     </div>
                 </a>
@@ -35,9 +35,9 @@
 
             <!-- Minecraft tile (distinct green accent) -->
             <article class="tile tile--green" tabindex="0">
-                <a class="tile-link transition-link" href="minecraft/" style="display:block;padding:0;margin:0;color:inherit">
+                <a class="tile-link transition-link" href="minecraft.php" style="display:block;padding:0;margin:0;color:inherit">
                     <div style="display:flex;align-items:center;gap:12px">
-                        <img class="icon" src="minecraft/Grass-Block-1.svg" alt="Minecraft" width="36" height="36" />
+                        <img class="icon" src="metro/Grass-Block-1.svg" alt="Minecraft" width="36" height="36" />
                         <div>
                             <h3>Minecraft</h3>
                             <p>Index for the Minecraft servers mods.</p>
@@ -56,7 +56,8 @@
         <img class="icon" src="metro/Php.svg" alt="PHP Ready" width="36" height="36" /><!--php-->
         <div>
             <h3>PHP Ready</h3>
-            <p>PHP is installed and configured. Dynamic apps and frameworks will run here.</p>
+            <p>PHP is installed and configured.</p>
+            <p>phpinfo(); dump enabled for intranet users</p>
         </div>
     </div>
 
@@ -72,7 +73,7 @@
                     <img class="icon" src="metro/Security%20Checked.svg" alt="Secure" width="36" height="36" />
                     <div>
                         <h3>Secure</h3>
-                        <p>Use SSH, manage packages and enable HTTPS with Let's Encrypt quickly.</p>
+                        <p>Use SSH, manage packages and enabled HTTPS with Let's Encrypt secure CERTBOT certifications.</p>
                     </div>
                 </div>
             </article>
@@ -84,7 +85,7 @@
                         <img class="icon" src="metro/Settings.svg" alt="Customizable" width="36" height="36" />
                         <div>
                             <h3>Services</h3>
-                            <p>Check services and manage them.</p>
+                            <p>Check running services status.</p>
                         </div>
                     </div>
                 </a>
@@ -93,11 +94,13 @@
 
         <section class="feature">
             <div class="device">
-                <img src="mac-mini.svg" alt="Mac Mini" width="120"/>
+                <a class="device-link" href="ascii-neofetch.php" title="Ascii Neofetch" style="display:inline-block">
+                    <img src="mac-mini.svg" alt="Mac Mini" width="120"/>
+                </a>
             </div>
             <div class="feature-text">
-                <h2>Ready to go</h2>
-                <p>Drop your projects into the server directory and point your browser to this machine's IP to preview them instantly.</p>
+                <h2><?php echo gethostname() . "@merky.home.ro"; ?></h2>
+                <p><?php echo trim(file_get_contents('/sys/devices/virtual/dmi/id/sys_vendor')) . " "; echo trim(file_get_contents('/sys/devices/virtual/dmi/id/product_name')); ?></p>
             </div>
         </section>
 
