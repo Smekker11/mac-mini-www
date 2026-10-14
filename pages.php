@@ -15,7 +15,7 @@
     <div class="container">
         <header class="hero">
             <div class="logo">
-                <img src="mac-mini.svg" alt="Mac Mini Server" width="76" height="64"/>
+                <img src="intel-celery.svg" alt="Mac Mini Server" width="76" height="64"/>
             </div>
             <h1 class="title">Pages</h1>
             <p class="subtitle">Index of files in the root folder.</p>

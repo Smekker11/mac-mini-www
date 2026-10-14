@@ -87,7 +87,7 @@ if (empty($error)) {
     <div class="container">
       <article class="tile tile--wide">
       <header class="hero" style="background: none; border: none; backdrop-filter: none;">
-        <div class="logo"><img src="mac-mini.svg" alt="Mac Mini" width="76" height="64"></div>
+        <div class="logo"><img src="intel-celery.svg" alt="Mac Mini" width="76" height="64"></div>
         <h1 class="title">Services</h1>
         <p class="subtitle">Quick port/service check on this machine.</p>
       </header>

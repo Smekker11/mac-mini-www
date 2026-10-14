@@ -134,6 +134,7 @@ body{
 .feature{display:flex;align-items:center;gap:22px;padding:18px;background:transparent}
 .device svg{width:120px;height:auto;display:block;margin:auto;filter:grayscale(0.08) brightness(1.05)}
 .device img{width:120px;height:auto;display:block;margin:auto;filter:grayscale(0.08) brightness(1.05);transition:transform .72s cubic-bezier(.2,.9,.2,1);transform-origin:center center;will-change:transform;backface-visibility:hidden}
+.device-link img{filter:brightness(0) invert(1)}
 
 /* rotate device image 180deg on hover, rotate back on mouse leave */
 .feature .device img:hover{transform:rotate(360deg);transition:transform 1s}
