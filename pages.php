@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pages — Mac Mini Server</title>
+    <title>Pages — <?= htmlspecialchars(gethostname(), ENT_QUOTES, 'UTF-8') ?></title>
     <link rel="stylesheet" href="styles.css">
     <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
@@ -15,7 +15,7 @@
     <div class="container">
         <header class="hero">
             <div class="logo">
-                <img src="intel-celery.svg" alt="Mac Mini Server" width="76" height="64"/>
+                <img src="intel-celery.svg" alt="Server" width="76" height="64"/>
             </div>
             <h1 class="title">Pages</h1>
             <p class="subtitle">Index of files in the root folder.</p>

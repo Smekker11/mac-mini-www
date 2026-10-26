@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mac Mini Server</title>
+    <title><?= htmlspecialchars(gethostname(), ENT_QUOTES, 'UTF-8') ?></title>
     <link rel="stylesheet" href="styles.css">
     <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
@@ -16,10 +16,10 @@
     <div class="container">
         <header class="hero">
             <div class="logo">
-                <img src="intel-celery.svg" alt="Server Punga" width="76" height="64"/>
+                <img src="intel-celery.svg" alt="Server" width="76" height="64"/>
             </div>
             <h1 class="title">merky.home.ro</h1>
-            <p class="subtitle">Server Punga - Web Server core of merky.home</p>
+            <p class="subtitle">Web Server core of merky.home</p>
             <p class="meta">Local IP: <strong><?php echo $_SERVER['SERVER_ADDR'] ?? 'localhost'; ?></strong> • PHP: <strong><?php echo phpversion(); ?></strong></p>
             <p><a class="cta" href="hampter-satumare.php">hampter.php</a></p>
         </header>
@@ -99,7 +99,7 @@
         <section class="feature">
             <div class="device">
                 <a class="device-link" href="ascii-neofetch.php" title="Ascii Neofetch" style="display:inline-block">
-                    <img src="Intel_Inside_Logo.svg" alt="Server Punga" width="120"/>
+                    <img src="Intel_Inside_Logo.svg" alt="Server" width="120"/>
                 </a>
             </div>
             <div class="feature-text">
@@ -109,7 +109,7 @@
         </section>
 
         <footer class="foot">
-            <small>Copyright ©2026 meperky cod,<code>Server Punga</code>. /index.php</small>
+            <small>Copyright ©2026 meperky cod,<code><?= htmlspecialchars(gethostname(), ENT_QUOTES, 'UTF-8') ?></code>. /index.php</small>
         </footer>
         </div>
     </div>

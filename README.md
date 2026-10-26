@@ -1,6 +1,6 @@
-# Mac Mini — Local Server
+# Server Punga — Local Server
 
-Simple local web index and utilities. MAC MINI DASHBOARD.
+Simple local web index and utilities. Server Punga dashboard.
 
 Important: php-zip REQUIRED on Debian/Ubuntu. Research for other distros, the ZIP dependency.
 - If you run this on Debian/Ubuntu and do not install `php-zip`, the "Download All JARs" feature WILL FAIL.
@@ -49,5 +49,5 @@ What is here
 - There is no global `download.php` in this repo; individual file links in `minecraft/index.php` point to `download.php?file=...` — if you rely on that, add an implementation or use the "Download All JARs" button which is handled in `minecraft/index.php`.
 
 License
--  <small>Copyright ©2026 meperky cod,<code>Mac Mini Server</code>. /index.php</small>
-MAC MINI DASHBOARD SERVER
+-  <small>Copyright ©2026 meperky cod,<code>Server Punga</code>. /index.php</small>
+Server Punga dashboard server

@@ -81,7 +81,7 @@ if (isset($_GET['download_all']) && $_GET['download_all'] === '1') {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Minecraft Mods — Mac Mini Server</title>
+        <title>Minecraft Mods — <?= htmlspecialchars(gethostname(), ENT_QUOTES, 'UTF-8') ?></title>
         <link rel="stylesheet" href="styles.css">
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
     </head>
@@ -90,7 +90,7 @@ if (isset($_GET['download_all']) && $_GET['download_all'] === '1') {
             <div class="container">
                 <header class="hero">
                     <div class="logo">
-                        <img src="metro/Grass-Block-1.svg" alt="Mac Mini Server" width="76" height="64" />
+                        <img src="metro/Grass-Block-1.svg" alt="Server" width="76" height="64" />
                     </div>
                     <h1 class="title">Minecraft Mods</h1>
                     <p class="subtitle">Index of mods running on the minecraft server.</p>

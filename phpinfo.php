@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Info — Mac Mini Server</title>
+    <title>PHP Info — <?= htmlspecialchars(gethostname(), ENT_QUOTES, 'UTF-8') ?></title>
     <link rel="stylesheet" href="styles.css">
     <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">

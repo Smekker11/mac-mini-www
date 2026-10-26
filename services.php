@@ -62,7 +62,7 @@ if (empty($error)) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Services — Mac Mini</title>
+  <title>Services — <?= htmlspecialchars(gethostname(), ENT_QUOTES, 'UTF-8') ?></title>
   <link rel="stylesheet" href="styles.css">
   <link rel="apple-touch-icon" sizes="180x180" href="ico/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="ico/favicon-32x32.png">
@@ -87,7 +87,7 @@ if (empty($error)) {
     <div class="container">
       <article class="tile tile--wide">
       <header class="hero" style="background: none; border: none; backdrop-filter: none;">
-        <div class="logo"><img src="intel-celery.svg" alt="Mac Mini" width="76" height="64"></div>
+        <div class="logo"><img src="intel-celery.svg" alt="Server" width="76" height="64"></div>
         <h1 class="title">Services</h1>
         <p class="subtitle">Quick port/service check on this machine.</p>
       </header>
